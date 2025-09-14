@@ -1,0 +1,86 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.quiz-container {
+    margin-top: 300px;
+    padding: 20px 30px;
+    max-width: 600px;
+    width: 100%;
+    
+}
+
+.questao {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: 0.3s;
+}
+
+.questao:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 50px;
+    letter-spacing: 3px;
+    text-shadow: 2px 4px 12px #1abc9c, 0 2px 8px #000;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-weight: bold;
+    
+    
+}
+
+
+
+
+.opcoes {
+    margin-top: 10px;
+}
+
+.opcoes {
+    margin: 5px 0;
+}
+
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}

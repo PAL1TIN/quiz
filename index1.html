@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz da verdade</title>
+        <link rel="stylesheet" href="css/style.css">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    -->
+    </head>
+    <body>
+        
+        <div class="quiz-container">
+            
+            <h1>QUIZ DA VERDADE</h1>
+            <div id="quiz">
+                
+                <div class="questao" id="q1">
+                    <h3>Pergunta 1: Quando foi nosso primeiro beijo?</h3>
+                    <div class="opcoes">
+                        
+                        <input type="radio" name="q1" value="a" onclick="responder('q1', 'a')"> a) 26/03/2025<br>
+                        <input type="radio" name="q1" value="b" onclick="responder('q1', 'b')"> b) 15/03/2025<br>
+                        <input type="radio" name="q1" value="c" onclick="responder('q1', 'c')"> c) 20/03/2023<br>
+                    </div>    
+                </div>
+                <div class="questao" id="q2">
+                    <h3>Pergunta 2: Quando você disse o primeiro EU TE AMO?</h3>
+                    <div class="opcoes">
+                        <input type="radio" name="q2" value="a" onclick="responder('q2', 'a')"> a) 26/04/2025<br>
+                        <input type="radio" name="q2" value="b" onclick="responder('q2', 'b')"> b) 16/05/2025<br>
+                        <input type="radio" name="q2" value="c" onclick="responder('q2', 'c')"> c) 13/05/2025<br>
+                    </div>
+                </div>
+                <div class="questao" id="q3">
+                    <h3>Pergunta 3: Qual individuo é o mais fofo da relação? </h3>
+                    <div class="opcoes">
+                        <input type="radio" name="q3" value="a" onclick="responder('q3', 'a')"> a) MELISSA<br>
+                        <input type="radio" name="q3" value="b" onclick="responder('q3', 'b')"> b) KHAUÃ<br>
+                        <input type="radio" name="q3" value="c" onclick="responder('q3', 'c')"> c) AMBOS<br>
+                    </div>
+                </div>
+                <div class="questao" id="q4">
+                    <h3>Pergunta 4: ADIVINHE... O que passou na cabeça do KHAUÃ quando viu a MELISSA</h3>
+                    <div class="opcoes">
+                        <input type="radio" name="q4" value="a" onclick="responder('q4', 'a')"> a) Ela vai ser minha mochilinha<br>
+                        <input type="radio" name="q4" value="b" onclick="responder('q4', 'b')"> b) Eu quero dar uns pega nela<br>
+                        <input type="radio" name="q4" value="c" onclick="responder('q4', 'c')"> c) Ela parece ser uma menina muito interessante e reservada<br>
+                        
+                    </div>
+                </div>
+        </div>
+        <div id="proximo"></div>
+        <script>
+            var contador = 0;
+            const Respostas = {
+                q1:"a"
+                ,q2:"c"
+                ,q3:"b"
+                ,q4:"c"
+            };
+            function responder(questao,opcao){
+                
+                let acertou = opcao === Respostas[questao];
+                if(acertou){
+                    contador++;
+                    alert("Acertou! Pontos: " + contador);
+                }else{
+                    alert("Errou! Pontos: " + contador +"\n"+"PRÓXIMA QUESTÃO...");
+                }
+                if(contador>=3){
+                    document.getElementById("proximo").innerHTML = '<button onclick="finalizar()">Finalizar Quiz</button>';
+                }
+            }
+        
+            function finalizar(){
+                alert("Você finalizou o quiz com " + contador + " pontos!");
+                alert("Parabéns, sabes muito bem! Te amo <3");
+                window.location.href = "index2.html";
+
+            }
+        </script>
+    </body>
+</html>
